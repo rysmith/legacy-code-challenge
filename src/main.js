@@ -7,14 +7,16 @@ var MyComponent = React.createClass ({
 
     // once the button is clicked, change the state of showText to the opposite of it's current value
     handleButtonClick: function () {
-        this.setState({showText: !this.state.showText})
+        this.setState({showText: !this.state.showText});
     },
 
     // render text and MyButton component
     render: function () {
         return (
-            <span className="myComponent">{this.props.text}</span><br/>
-            <MyButton></MyButton>
+            <div>
+                <span className="myComponent">{this.props.text}</span><br/>
+                <MyButton></MyButton>
+            </div>
         )
     }
 });
