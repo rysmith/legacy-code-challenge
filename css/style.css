@@ -1,0 +1,12 @@
+.myButton > button {
+    background-color: aqua;
+    padding: 10px;
+    border: grey 3px solid;
+}
+
+@media screen and (max-width: 600px) {
+    .myButton > button {
+        background-color: green;
+        border: black 3px solid;
+    }
+}

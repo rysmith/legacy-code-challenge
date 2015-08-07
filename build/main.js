@@ -17,8 +17,8 @@ var MyComponent = React.createClass ({displayName: "MyComponent",
     // render text and MyButton component
     render: function () {
         return (
-            React.createElement("div", null, 
-                React.createElement("span", {className: "myComponent"}, this.state.showText ? this.props.text : null), React.createElement("br", null), 
+            React.createElement("div", {className: "myComponent"}, 
+                React.createElement("span", null, this.state.showText ? this.props.text : null), 
                 React.createElement(MyButton, {clickHandler: this.handleButtonClick})
             )
         )
@@ -34,7 +34,10 @@ var MyButton = React.createClass ({displayName: "MyButton",
     // on click call the property clickHandler, which calls handleButtonClick
     render: function () {
         return (
-            React.createElement("button", {className: "myButton", onClick: this.props.clickHandler}, "Click to Toggle Text")
+            React.createElement("div", {className: "myButton"}, 
+                React.createElement("button", {onClick: this.props.clickHandler}, "Click to Toggle Text")
+            )
+
         )
     }
 });

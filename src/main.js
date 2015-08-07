@@ -17,8 +17,8 @@ var MyComponent = React.createClass ({
     // render text and MyButton component
     render: function () {
         return (
-            <div>
-                <span className="myComponent">{this.state.showText ? this.props.text : null}</span><br/>
+            <div className="myComponent">
+                <span>{this.state.showText ? this.props.text : null}</span>
                 <MyButton clickHandler={this.handleButtonClick}></MyButton>
             </div>
         )
@@ -34,7 +34,10 @@ var MyButton = React.createClass ({
     // on click call the property clickHandler, which calls handleButtonClick
     render: function () {
         return (
-            <button className="myButton" onClick={this.props.clickHandler}>Click to Toggle Text</button>
+            <div className="myButton">
+                <button onClick={this.props.clickHandler}>Click to Toggle Text</button>
+            </div>
+
         )
     }
 });
