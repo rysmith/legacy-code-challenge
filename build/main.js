@@ -33,13 +33,16 @@ var MyButton = React.createClass ({displayName: "MyButton",
         clickHandler: React.PropTypes.func.isRequired
     },
 
+    handleClick: function () {
+        this.props.clickHandler();
+    },
+
     // on click call the property clickHandler, which calls handleButtonClick
     render: function () {
         return (
             React.createElement("div", {className: "myButton"}, 
-                React.createElement("button", {onClick: this.props.clickHandler}, "Click to Toggle Text")
+                React.createElement("button", {onClick: this.handleClick}, "Click to Toggle Text")
             )
-
         )
     }
 });
