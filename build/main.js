@@ -1,5 +1,9 @@
 var MyComponent = React.createClass ({displayName: "MyComponent",
 
+    PropType: {
+        text: React.PropTypes.string.isRequired
+    },
+
     // initial state of showText has been set to true
     getInitialState: function () {
         return {showText: true}
@@ -14,22 +18,28 @@ var MyComponent = React.createClass ({displayName: "MyComponent",
     render: function () {
         return (
             React.createElement("div", null, 
-                React.createElement("span", {className: "myComponent"}, this.props.text), React.createElement("br", null), 
-                React.createElement(MyButton, null)
+                React.createElement("span", {className: "myComponent"}, this.state.showText ? this.props.text : null), React.createElement("br", null), 
+                React.createElement(MyButton, {clickHandler: this.handleButtonClick})
             )
         )
     }
 });
 
 var MyButton = React.createClass ({displayName: "MyButton",
+
+    PropTypes: {
+        clickHandler: React.PropTypes.func.isRequired
+    },
+
+    // on click call the property clickHandler, which calls handleButtonClick
     render: function () {
         return (
-            React.createElement("button", {className: "myButton"}, "Click to Toggle Text")
+            React.createElement("button", {className: "myButton", onClick: this.props.clickHandler}, "Click to Toggle Text")
         )
     }
 });
 
-var text = 'Here is some text that should show by default and hide on button click.';
+var text = "Hello, I am some text that should toggle on button click.";
 
 React.render(
     React.createElement(MyComponent, {text: text}),
