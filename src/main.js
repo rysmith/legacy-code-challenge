@@ -18,8 +18,10 @@ var MyComponent = React.createClass ({
     render: function () {
         return (
             <div className="myComponent">
-                <span>{this.state.showText ? this.props.text : null}</span>
+
                 <MyButton clickHandler={this.handleButtonClick}></MyButton>
+                <span>{this.state.showText ? this.props.text : null}</span>
+
             </div>
         )
     }

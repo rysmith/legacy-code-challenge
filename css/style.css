@@ -1,3 +1,16 @@
+body {
+    background-color: palegreen;
+    padding: 50px;
+}
+
+.myComponent {
+    text-align: center;
+    background-color: white;
+    opacity: 0.93;
+    padding: 30px;
+    border-radius: 5px;
+}
+
 .myButton > button {
     background-color: aqua;
     padding: 10px;
@@ -9,4 +22,9 @@
         background-color: green;
         border: black 3px solid;
     }
+}
+
+span {
+    color: slategray;
+    font-size: 3em;
 }
