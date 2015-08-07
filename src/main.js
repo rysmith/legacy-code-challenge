@@ -35,7 +35,7 @@ var MyButton = React.createClass ({
         this.props.clickHandler();
     },
 
-    // on click call the property handleClick, which calls clickHandler
+    // on click call the function handleClick, which calls clickHandler
     render: function () {
         return (
             <div className="myButton">
